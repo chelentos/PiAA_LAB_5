@@ -20,47 +20,39 @@ vector<size_t> prefix_function(const string& s) { //prefix-function
 
 vector<int> KMP(const string& substr, const string& str) { //Knuth–Morris–Pratt string searching algorithm
 
-	vector<size_t> prefixes = prefix_function(substr + "@" + str);
-	size_t n = substr.length();
+        if (substr.empty() || str.empty())
+                return { -1 };
+	vector<size_t> prefixes = prefix_function(substr);
 	vector<int> result;
-	for (int i = n + 1; i < prefixes.size(); ++i) {
-		if (prefixes[i] == n) {
-			result.push_back(i - 2 * n);
+	int pos = 0;
+	for (int i = 0; i < str.size(); i++) {
+		while (pos > 0 and (pos >= substr.size() || substr[pos] != str[i])) {
+			
+			pos = prefixes[pos - 1];
 		}
+			
+		if (substr[pos] == str[i])
+			pos++;
+
+		if (pos == substr.size())
+			result.push_back(i - pos + 1);
 	}
-	if (result.size() == 0) {
-		result = { -1 };
-	}
+	
+	if (result.empty())
+		result.resize(1, -1);
+		
 	return result;
 }
 
-int KMP_for_SHIFT(const string& str1, const string& str2) { //Knuth–Morris–Pratt string searching algorithm
-
-	vector<size_t> prefixes = prefix_function(str2);
-	for (size_t k = 0, i = 0; i < str1.size(); ++i) {
-
-		while ((k > 0) && (str2[k] != str1[i])) {
-		    k = prefixes[k-1];
-		}
-
-	    if (str2[k] == str1[i]) {
-	        k++;
-	    }
-
-        if (k == str2.size()) {
-            return (i - str2.size() + 1);
-        }
-	}
-
-	return -1;
-}
-
-int shift(const string& str1, const string& str2) { //Shift verification
-
+int shift(const string& str1, const string& str2) { // Shift verification
 	if (str1.size() != str2.size()) {
 		return -1;
 	}
 	else {
-		return KMP_for_SHIFT(str1 + str1, str2);
-    }
+		vector<int> enter_points = KMP(str2, str1 + str1);
+    	if(enter_points.size()) {
+    		return enter_points[0];
+    	}
+	}
+    return -1;
 }
