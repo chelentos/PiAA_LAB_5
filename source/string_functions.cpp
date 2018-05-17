@@ -55,7 +55,7 @@ int KMP_for_SHIFT(const string& str1, const string& str2) { //Knuth–Morris–P
 	return -1;
 }
 
-int shift(const string& str1, const string& str2) {
+int shift(const string& str1, const string& str2) { //Shift verification
 
 	if (str1.size() != str2.size()) {
 		return -1;
