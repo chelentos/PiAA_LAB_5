@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     	cin >> text;
 	cout << endl;
 	int count_kmp = 0;
-	int count_bf = 0;
+	long long int count_bf = 0;
 
 	vector<int> res_kmp = vs_KMP(pattern, text, count_kmp);
 	vector<int> res_bf = BROOT_FORCE(pattern, text, count_bf);

@@ -48,7 +48,7 @@ vector<int> vs_KMP(const string& substr, const string& str, int& count) { //Knut
 }
 
 
-vector<int> BROOT_FORCE(const string& substr, const string& str, int& count){
+vector<int> BROOT_FORCE(const string& substr, const string& str, long long int& count){
 
 	if (!substr.size() || !str.size())
 		return {-1};
