@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named shift_gtests
+
+# Build rule for target.
+shift_gtests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 shift_gtests
+.PHONY : shift_gtests
+
+# fast build rule for target.
+shift_gtests/fast:
+	$(MAKE) -f CMakeFiles/shift_gtests.dir/build.make CMakeFiles/shift_gtests.dir/build
+.PHONY : shift_gtests/fast
+
+#=============================================================================
+# Target rules for targets named kmp_gtests
+
+# Build rule for target.
+kmp_gtests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kmp_gtests
+.PHONY : kmp_gtests
+
+# fast build rule for target.
+kmp_gtests/fast:
+	$(MAKE) -f CMakeFiles/kmp_gtests.dir/build.make CMakeFiles/kmp_gtests.dir/build
+.PHONY : kmp_gtests/fast
+
+#=============================================================================
 # Target rules for targets named vs_funcs
 
 # Build rule for target.
@@ -122,19 +148,6 @@ vs_funcs: cmake_check_build_system
 vs_funcs/fast:
 	$(MAKE) -f CMakeFiles/vs_funcs.dir/build.make CMakeFiles/vs_funcs.dir/build
 .PHONY : vs_funcs/fast
-
-#=============================================================================
-# Target rules for targets named G_tests
-
-# Build rule for target.
-G_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 G_tests
-.PHONY : G_tests
-
-# fast build rule for target.
-G_tests/fast:
-	$(MAKE) -f CMakeFiles/G_tests.dir/build.make CMakeFiles/G_tests.dir/build
-.PHONY : G_tests/fast
 
 #=============================================================================
 # Target rules for targets named vs_tests
@@ -201,32 +214,59 @@ versus/fast:
 	$(MAKE) -f CMakeFiles/versus.dir/build.make CMakeFiles/versus.dir/build
 .PHONY : versus/fast
 
-gtests/tests.o: gtests/tests.cpp.o
+gtests/kmp_tests.o: gtests/kmp_tests.cpp.o
 
-.PHONY : gtests/tests.o
+.PHONY : gtests/kmp_tests.o
 
 # target to build an object file
-gtests/tests.cpp.o:
-	$(MAKE) -f CMakeFiles/G_tests.dir/build.make CMakeFiles/G_tests.dir/gtests/tests.cpp.o
-.PHONY : gtests/tests.cpp.o
+gtests/kmp_tests.cpp.o:
+	$(MAKE) -f CMakeFiles/kmp_gtests.dir/build.make CMakeFiles/kmp_gtests.dir/gtests/kmp_tests.cpp.o
+.PHONY : gtests/kmp_tests.cpp.o
 
-gtests/tests.i: gtests/tests.cpp.i
+gtests/kmp_tests.i: gtests/kmp_tests.cpp.i
 
-.PHONY : gtests/tests.i
+.PHONY : gtests/kmp_tests.i
 
 # target to preprocess a source file
-gtests/tests.cpp.i:
-	$(MAKE) -f CMakeFiles/G_tests.dir/build.make CMakeFiles/G_tests.dir/gtests/tests.cpp.i
-.PHONY : gtests/tests.cpp.i
+gtests/kmp_tests.cpp.i:
+	$(MAKE) -f CMakeFiles/kmp_gtests.dir/build.make CMakeFiles/kmp_gtests.dir/gtests/kmp_tests.cpp.i
+.PHONY : gtests/kmp_tests.cpp.i
 
-gtests/tests.s: gtests/tests.cpp.s
+gtests/kmp_tests.s: gtests/kmp_tests.cpp.s
 
-.PHONY : gtests/tests.s
+.PHONY : gtests/kmp_tests.s
 
 # target to generate assembly for a file
-gtests/tests.cpp.s:
-	$(MAKE) -f CMakeFiles/G_tests.dir/build.make CMakeFiles/G_tests.dir/gtests/tests.cpp.s
-.PHONY : gtests/tests.cpp.s
+gtests/kmp_tests.cpp.s:
+	$(MAKE) -f CMakeFiles/kmp_gtests.dir/build.make CMakeFiles/kmp_gtests.dir/gtests/kmp_tests.cpp.s
+.PHONY : gtests/kmp_tests.cpp.s
+
+gtests/shift_tests.o: gtests/shift_tests.cpp.o
+
+.PHONY : gtests/shift_tests.o
+
+# target to build an object file
+gtests/shift_tests.cpp.o:
+	$(MAKE) -f CMakeFiles/shift_gtests.dir/build.make CMakeFiles/shift_gtests.dir/gtests/shift_tests.cpp.o
+.PHONY : gtests/shift_tests.cpp.o
+
+gtests/shift_tests.i: gtests/shift_tests.cpp.i
+
+.PHONY : gtests/shift_tests.i
+
+# target to preprocess a source file
+gtests/shift_tests.cpp.i:
+	$(MAKE) -f CMakeFiles/shift_gtests.dir/build.make CMakeFiles/shift_gtests.dir/gtests/shift_tests.cpp.i
+.PHONY : gtests/shift_tests.cpp.i
+
+gtests/shift_tests.s: gtests/shift_tests.cpp.s
+
+.PHONY : gtests/shift_tests.s
+
+# target to generate assembly for a file
+gtests/shift_tests.cpp.s:
+	$(MAKE) -f CMakeFiles/shift_gtests.dir/build.make CMakeFiles/shift_gtests.dir/gtests/shift_tests.cpp.s
+.PHONY : gtests/shift_tests.cpp.s
 
 source/KMP_vs_BROOT_FORCE.o: source/KMP_vs_BROOT_FORCE.cpp.o
 
@@ -397,17 +437,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... shift_gtests"
+	@echo "... kmp_gtests"
 	@echo "... rebuild_cache"
 	@echo "... vs_funcs"
-	@echo "... G_tests"
 	@echo "... vs_tests"
 	@echo "... str_funcs"
 	@echo "... kmp"
 	@echo "... shift"
 	@echo "... versus"
-	@echo "... gtests/tests.o"
-	@echo "... gtests/tests.i"
-	@echo "... gtests/tests.s"
+	@echo "... gtests/kmp_tests.o"
+	@echo "... gtests/kmp_tests.i"
+	@echo "... gtests/kmp_tests.s"
+	@echo "... gtests/shift_tests.o"
+	@echo "... gtests/shift_tests.i"
+	@echo "... gtests/shift_tests.s"
 	@echo "... source/KMP_vs_BROOT_FORCE.o"
 	@echo "... source/KMP_vs_BROOT_FORCE.i"
 	@echo "... source/KMP_vs_BROOT_FORCE.s"
