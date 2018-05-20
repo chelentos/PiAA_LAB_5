@@ -24,8 +24,8 @@ vector<int> KMP(const string& substr, const string& str) { //Knuth–Morris–Pr
                 return { -1 };
 	vector<size_t> prefixes = prefix_function(substr);
 	vector<int> result;
-	int pos = 0;
-	for (int i = 0; i < str.size(); i++) {
+	unsigned int pos = 0;
+	for (unsigned int i = 0; i < str.size(); i++) {
 		while (pos > 0 and (pos >= substr.size() || substr[pos] != str[i])) {
 			
 			pos = prefixes[pos - 1];

@@ -26,7 +26,7 @@ vector<int> vs_KMP(const string& substr, const string& str, int& count) { //Knut
 	vector<int> result;
 	vector<size_t> prefixes = vs_prefix_function(substr, count);
 	int pos = 0;
-	for (int i = 0; i < str.size(); i++) {
+	for (unsigned int i = 0; i < str.size(); i++) {
 		while (pos > 0 and (pos >= substr.size() || substr[pos] != str[i])) {
 
 			pos = prefixes[pos - 1];

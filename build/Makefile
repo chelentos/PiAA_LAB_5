@@ -163,30 +163,30 @@ str_funcs/fast:
 .PHONY : str_funcs/fast
 
 #=============================================================================
-# Target rules for targets named step1
+# Target rules for targets named kmp
 
 # Build rule for target.
-step1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 step1
-.PHONY : step1
+kmp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kmp
+.PHONY : kmp
 
 # fast build rule for target.
-step1/fast:
-	$(MAKE) -f CMakeFiles/step1.dir/build.make CMakeFiles/step1.dir/build
-.PHONY : step1/fast
+kmp/fast:
+	$(MAKE) -f CMakeFiles/kmp.dir/build.make CMakeFiles/kmp.dir/build
+.PHONY : kmp/fast
 
 #=============================================================================
-# Target rules for targets named step2
+# Target rules for targets named shift
 
 # Build rule for target.
-step2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 step2
-.PHONY : step2
+shift: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 shift
+.PHONY : shift
 
 # fast build rule for target.
-step2/fast:
-	$(MAKE) -f CMakeFiles/step2.dir/build.make CMakeFiles/step2.dir/build
-.PHONY : step2/fast
+shift/fast:
+	$(MAKE) -f CMakeFiles/shift.dir/build.make CMakeFiles/shift.dir/build
+.PHONY : shift/fast
 
 #=============================================================================
 # Target rules for targets named versus
@@ -255,59 +255,59 @@ source/KMP_vs_BROOT_FORCE.cpp.s:
 	$(MAKE) -f CMakeFiles/vs_funcs.dir/build.make CMakeFiles/vs_funcs.dir/source/KMP_vs_BROOT_FORCE.cpp.s
 .PHONY : source/KMP_vs_BROOT_FORCE.cpp.s
 
-source/step1.o: source/step1.cpp.o
+source/kmp.o: source/kmp.cpp.o
 
-.PHONY : source/step1.o
-
-# target to build an object file
-source/step1.cpp.o:
-	$(MAKE) -f CMakeFiles/step1.dir/build.make CMakeFiles/step1.dir/source/step1.cpp.o
-.PHONY : source/step1.cpp.o
-
-source/step1.i: source/step1.cpp.i
-
-.PHONY : source/step1.i
-
-# target to preprocess a source file
-source/step1.cpp.i:
-	$(MAKE) -f CMakeFiles/step1.dir/build.make CMakeFiles/step1.dir/source/step1.cpp.i
-.PHONY : source/step1.cpp.i
-
-source/step1.s: source/step1.cpp.s
-
-.PHONY : source/step1.s
-
-# target to generate assembly for a file
-source/step1.cpp.s:
-	$(MAKE) -f CMakeFiles/step1.dir/build.make CMakeFiles/step1.dir/source/step1.cpp.s
-.PHONY : source/step1.cpp.s
-
-source/step2.o: source/step2.cpp.o
-
-.PHONY : source/step2.o
+.PHONY : source/kmp.o
 
 # target to build an object file
-source/step2.cpp.o:
-	$(MAKE) -f CMakeFiles/step2.dir/build.make CMakeFiles/step2.dir/source/step2.cpp.o
-.PHONY : source/step2.cpp.o
+source/kmp.cpp.o:
+	$(MAKE) -f CMakeFiles/kmp.dir/build.make CMakeFiles/kmp.dir/source/kmp.cpp.o
+.PHONY : source/kmp.cpp.o
 
-source/step2.i: source/step2.cpp.i
+source/kmp.i: source/kmp.cpp.i
 
-.PHONY : source/step2.i
+.PHONY : source/kmp.i
 
 # target to preprocess a source file
-source/step2.cpp.i:
-	$(MAKE) -f CMakeFiles/step2.dir/build.make CMakeFiles/step2.dir/source/step2.cpp.i
-.PHONY : source/step2.cpp.i
+source/kmp.cpp.i:
+	$(MAKE) -f CMakeFiles/kmp.dir/build.make CMakeFiles/kmp.dir/source/kmp.cpp.i
+.PHONY : source/kmp.cpp.i
 
-source/step2.s: source/step2.cpp.s
+source/kmp.s: source/kmp.cpp.s
 
-.PHONY : source/step2.s
+.PHONY : source/kmp.s
 
 # target to generate assembly for a file
-source/step2.cpp.s:
-	$(MAKE) -f CMakeFiles/step2.dir/build.make CMakeFiles/step2.dir/source/step2.cpp.s
-.PHONY : source/step2.cpp.s
+source/kmp.cpp.s:
+	$(MAKE) -f CMakeFiles/kmp.dir/build.make CMakeFiles/kmp.dir/source/kmp.cpp.s
+.PHONY : source/kmp.cpp.s
+
+source/shift.o: source/shift.cpp.o
+
+.PHONY : source/shift.o
+
+# target to build an object file
+source/shift.cpp.o:
+	$(MAKE) -f CMakeFiles/shift.dir/build.make CMakeFiles/shift.dir/source/shift.cpp.o
+.PHONY : source/shift.cpp.o
+
+source/shift.i: source/shift.cpp.i
+
+.PHONY : source/shift.i
+
+# target to preprocess a source file
+source/shift.cpp.i:
+	$(MAKE) -f CMakeFiles/shift.dir/build.make CMakeFiles/shift.dir/source/shift.cpp.i
+.PHONY : source/shift.cpp.i
+
+source/shift.s: source/shift.cpp.s
+
+.PHONY : source/shift.s
+
+# target to generate assembly for a file
+source/shift.cpp.s:
+	$(MAKE) -f CMakeFiles/shift.dir/build.make CMakeFiles/shift.dir/source/shift.cpp.s
+.PHONY : source/shift.cpp.s
 
 source/string_functions.o: source/string_functions.cpp.o
 
@@ -402,8 +402,8 @@ help:
 	@echo "... G_tests"
 	@echo "... vs_tests"
 	@echo "... str_funcs"
-	@echo "... step1"
-	@echo "... step2"
+	@echo "... kmp"
+	@echo "... shift"
 	@echo "... versus"
 	@echo "... gtests/tests.o"
 	@echo "... gtests/tests.i"
@@ -411,12 +411,12 @@ help:
 	@echo "... source/KMP_vs_BROOT_FORCE.o"
 	@echo "... source/KMP_vs_BROOT_FORCE.i"
 	@echo "... source/KMP_vs_BROOT_FORCE.s"
-	@echo "... source/step1.o"
-	@echo "... source/step1.i"
-	@echo "... source/step1.s"
-	@echo "... source/step2.o"
-	@echo "... source/step2.i"
-	@echo "... source/step2.s"
+	@echo "... source/kmp.o"
+	@echo "... source/kmp.i"
+	@echo "... source/kmp.s"
+	@echo "... source/shift.o"
+	@echo "... source/shift.i"
+	@echo "... source/shift.s"
 	@echo "... source/string_functions.o"
 	@echo "... source/string_functions.i"
 	@echo "... source/string_functions.s"
