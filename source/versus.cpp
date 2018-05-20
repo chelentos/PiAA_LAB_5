@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 	vector<int> res_bf = BROOT_FORCE(pattern, text, count_bf);
 	cout.width(15);
 	cout << "Results: " << "KMP" << " " << "BF" << endl;
-	for(int i = 0; i < res_kmp.size(); ++i) {
+	for(unsigned int i = 0; i < res_kmp.size(); ++i) {
 		cout.width(15);
 		cout << " " << res_kmp[i] << " " << res_bf[i];
 		cout << endl;
